@@ -139,11 +139,11 @@ areaMain(){
     printf "┘"
 }
 
-#Funcion que imprime el logo en el centro de la consola. (CODIGO VIEJO, LO TENGO QUE ACTUALIZAR PERO TENGO PAJA AÚN).
+#Funcion que imprime el logo en el centro de la consola.
 logo(){
     inicioColLogo=$((limiteColInfo + 1))
     limiteFilLogo=$((inicioFilMain - 1))
-    mitadCol=$((inicioColLogo ))
+    mitadCol=$(((columnas / 3) * 2 - 11))
 
     printf "\033[1m"
     tput cup 0 $mitadCol

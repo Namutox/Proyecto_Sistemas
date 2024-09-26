@@ -25,6 +25,7 @@ setFCInf 3 1
 printf "2- Info"
 setFCInf 4 1
 printf "3- Salir"
+nlInfo
 printf "\033[0m"
 
 setFCInp 2 11
@@ -44,6 +45,8 @@ case $comando in
     *) #clear
         setFCMain 1 1
         printf "Opcion incorrecta"
+        nlMain
+        printf "TEST"
         exit
         ;;
 esac

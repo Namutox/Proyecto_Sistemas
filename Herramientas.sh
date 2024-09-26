@@ -16,11 +16,6 @@ setFCMain(){
     tput cup $((inicioFilMain + $1)) $((inicioColMain + $2))
 }
 
-#Funcion para hacer más rápido el salto de linea al usar "printf". (ESTO ES MEDIO VIEJO, LO VOY A BORRAR CUANDO NO ME DE PAJA MODIFICAR EL LOGO).
-nl(){
-    printf "\n"
-}
-
 #Funcion que limpia el area de informacion.
 clearInf(){
     for ((i=1; i<limiteFilInfo - 1; i++)); do
@@ -41,6 +36,16 @@ clearInp(){
     done
     setFCInp 2 1
     printf "Comandos:"
+}
+
+nlInfo(){
+    printf "\033[1E"
+    printf "\033[1C"
+}
+
+nlMain(){
+    printf "\033[1E"
+    printf "\033[$((inicioColMain + 1))C"
 }
 
 #Funcion para cambiar el color de fondo de los caracteres (FUNCIONA PERO ES DE PRUEBA).
