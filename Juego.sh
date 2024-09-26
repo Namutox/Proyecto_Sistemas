@@ -14,8 +14,8 @@ PS3=": "
 
 #Acá inician los comandos que se muestran en la pantalla.
 inicio
-logo
 hud
+logo
 
 setFCInf 1 1
 printf "Bienvenido a NOMBRE JUEGO"
@@ -33,7 +33,7 @@ clearInp
 
 case $comando in
     1) setFCMain 1 1
-        printf "JUGARRRR"
+        gameStart
         ;;
     2) setFCMain 1 1
         printf "Juego hecho por: "
