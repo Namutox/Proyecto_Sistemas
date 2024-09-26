@@ -1,31 +1,9 @@
-#!/bin/bash
+!/bin/bash
 
 
 # Obtener el tamaño de la terminal
 filas=$(tput lines)
 columnas=$(tput cols)
-
-#Funcion que imprime el logo en el centro de la consola. (CODIGO VIEJO, LO TENGO QUE ACTUALIZAR PERO TENGO PAJA AÚN).
-logo(){
-    local a=$((columnas/2 + 5))
-    tput cup 0 $a
-    printf "\033[1m"
-    printf "╔════════════════════╗"
-    nl
-    tput cup 1 $a
-    printf "║                    ║"
-    nl
-    tput cup 2 $a
-    printf "║\033[32m       Hack_OS\033[1m      ║"
-    nl
-    tput cup 3 $a
-    printf "║                    ║"
-    nl
-    tput cup 4 $a
-    printf "╚════════════════════╝"
-    nl
-    printf "\033[0m"
-}
 
 #Funcion que muestra la animacion de inicio del juego. (TENGO QUE ACTUALIZAR EL TEMITA DE COLORES PARA QUE SEA IGUAL QUE EL RESTO).
 inicio(){
@@ -161,9 +139,41 @@ areaMain(){
     printf "┘"
 }
 
+#Funcion que imprime el logo en el centro de la consola. (CODIGO VIEJO, LO TENGO QUE ACTUALIZAR PERO TENGO PAJA AÚN).
+logo(){
+    inicioColLogo=$((limiteColInfo + 1))
+    limiteFilLogo=$((inicioFilMain - 1))
+    mitadCol=$((inicioColLogo ))
+
+    printf "\033[1m"
+    tput cup 0 $mitadCol
+    printf "╔════════════════════╗"
+    tput cup 1 $mitadCol
+    printf "║                    ║"
+    tput cup 2 $mitadCol
+    printf "║\033[32m       Hack_OS\033[1m      ║"
+    tput cup 3 $mitadCol
+    printf "║                    ║"
+    tput cup 4 $mitadCol
+    printf "╚════════════════════╝"
+
+    printf "\033[0m"
+}
+
 #Funcion que llama a los metodos mencionados para crear el "HUD" del juego. ("HUD" es el nombre que tienen los marcos y todo eso en los juegos).
 hud(){
     areaInfo
     areaInput
     areaMain
+}
+
+gameStart(){
+    clearInf
+    clearInp
+    setFCInf 1 1
+
+    printf "..."
+
+    printf "Por fin logro contactarte, no fue fácil."
+    
 }
