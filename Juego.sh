@@ -4,6 +4,7 @@
 #"Importa" los archivos con funciones practicas (Para no llenar este archivo con funciones y hacerlo mas facil de leer).
 source ./Herramientas.sh
 source ./Funciones.sh
+source ./Niveles.sh
 
 #Estas dos lineas de código ocultan el cursor en la consola y borran el nombre por defecto al escribir.
 printf "\033[?25l"
@@ -28,13 +29,13 @@ printf "3- Salir"
 nlInfo
 printf "\033[0m"
 
-setFCInp 2 11
+setFCInp 1 1
 read comando
 clearInp
 
 case $comando in
     1) setFCMain 1 1
-        gameStart
+        tutorial
         ;;
     2) setFCMain 1 1
         printf "Juego hecho por: "

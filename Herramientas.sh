@@ -8,7 +8,7 @@ setFCInf(){
 
 #Funcion para poner el cursor en el area Input.
 setFCInp(){
-    tput cup $((inicioFilInput + $1)) $((inicioColInput + $2))
+    tput cup $(((inicioFilInput + 1) + $1)) $(((inicioColInput + 10) + $2))
 }
 
 #Funcion para poner el cursor en el area Main.
@@ -34,7 +34,7 @@ clearInp(){
             printf " "
         done
     done
-    setFCInp 2 1
+    tput cup $((inicioFilInput + 2)) $((inicioColInput + 1))
     printf "Comandos:"
 }
 

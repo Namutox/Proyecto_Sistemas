@@ -104,7 +104,7 @@ areaInput(){
     printf "┘"
 
     printf "\033[0m"
-    setFCInp 2 1
+    tput cup $((inicioFilInput + 2)) $((inicioColInput + 1))
     printf "Comandos:"
 }
 
@@ -167,13 +167,17 @@ hud(){
     areaMain
 }
 
-gameStart(){
-    clearInf
-    clearInp
-    setFCInf 1 1
-
-    printf "..."
-
-    printf "Por fin logro contactarte, no fue fácil."
-    
+asciiCompu(){
+    setFCMain $1 $2
+    printf ".--."
+    setFCMain $(($1 + 1)) $2
+    printf "|__| .-------."
+    setFCMain $(($1 + 2)) $2
+    printf "|=.| |.-----.|"
+    setFCMain $(($1 + 3)) $2
+    printf "|--| ||  $3  ||"
+    setFCMain $(($1 + 4)) $2
+    printf "|  | |'-----'|"
+    setFCMain $(($1 + 5)) $2
+    printf "|__|~')_____('"
 }
