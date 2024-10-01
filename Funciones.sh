@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 
 # Obtener el tamaño de la terminal

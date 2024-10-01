@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 
 tutorial(){
@@ -41,5 +41,24 @@ tutorial(){
     setFCInf 2 1
     printf "Para conectarte, escribe 'connect pc' y su numero."
     nlInfo
-    printf "En este caso sería 'connect pc 1'."
+    printf "En este caso sería 'connect pc_1'."
+
+    loop2(){
+        setFCInp 1 1
+
+        read cmd2
+        clearInp
+
+        case $cmd2 in
+            "connect pc_1") clearInf
+                clearMain
+                setFCMain 1 1
+                printf "Dentro de la compu pim pim pim"
+                ;;
+            *) loop2
+                ;;
+        esac
+    }
+
+    loop2
 }

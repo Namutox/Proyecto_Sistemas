@@ -26,6 +26,15 @@ clearInf(){
     done
 }
 
+clearMain(){
+    for ((i=inicioFilMain + 1; i<limiteFilMain -1; i++)); do
+        tput cup $i $((inicioColMain + 1))
+        for ((h=inicioColMain + 1; h<limiteColMain - 1; h++)) do
+            printf " "
+        done
+    done
+}
+
 #Funcion que limpia el area de input.
 clearInp(){
     for ((i=inicioFilInput + 1; i<filas - 1; i++)); do
