@@ -5,6 +5,7 @@
 source ./Herramientas.sh
 source ./Funciones.sh
 source ./Niveles.sh
+source ./Ascii.sh
 
 #Estas dos lineas de código ocultan el cursor en la consola y borran el nombre por defecto al escribir.
 printf "\033[?25l"

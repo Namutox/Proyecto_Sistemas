@@ -50,10 +50,7 @@ tutorial(){
         clearInp
 
         case $cmd2 in
-            "connect pc_1") clearInf
-                clearMain
-                setFCMain 1 1
-                printf "Dentro de la compu pim pim pim"
+            "connect pc_1") 
                 ;;
             *) loop2
                 ;;
@@ -61,4 +58,113 @@ tutorial(){
     }
 
     loop2
-}
+
+    clearInf
+    clearMain
+
+    asciiCarpeta 2 5
+    setFCMain 1 7
+    printf "Reg"
+    setFCInf 1 1
+    printf "Bien, lograste entrar."
+    nlInfo
+    printf "Tienes que borrar tus registros."
+    nlInfo
+    printf "Entra en la carpeta 'Reg' y elimina su contenido."
+    nlInfo
+    nlInfo
+    printf "-------------------------------------------------"
+    nlInfo
+    printf "Escribe 'ayuda' si la necesitas."
+
+    loop3(){
+        setFCInp 1 1
+
+        read cmd3
+        clearInp
+
+        case $cmd3 in
+            "cd reg")
+                ;;
+            ayuda) setFCInf 9 1
+                printf "Para entrar en 'Reg', escribe 'cd Reg'."
+                loop3
+            ;;
+            *) loop3
+                ;;
+        esac
+    }
+
+
+    loop3
+
+    clearMain
+    clearInf
+
+    asciiCarpeta 2 5
+    setFCMain 1 7
+    printf "SP_1"
+    setFCInp 1 1
+    printf "Elimina la carpeta llamada 'SP_1'."
+    nlInfo
+    printf "Recuerda utilizar 'rm' para eliminar."
+
+    loop4(){
+        setFCInp 1 1
+
+            read cmd4
+            clearInp
+
+            case $cmd4 in
+                "rm Reg")
+                    ;;
+                *) loop4
+                    ;;
+            esac
+        }
+    
+    loop4
+
+    clearInf
+    clearMain
+
+    setFCInf 1 1
+    printf "Perfecto, ya no tienen tus registros."
+    nlInfo
+    printf "Ahora desconectate y habremos terminado."
+    nlInfo
+    printf "Recuerda que puedes escribir 'ayuda'."
+    
+    loop5 (){
+        setFCInp 1 1
+
+        read cmd3
+        clearInp
+
+        case $cmd3 in
+            "disconnect")
+                ;;
+            ayuda) setFCInf 5 1
+                printf "Para desconectarte escribe 'disconnect'."
+                loop5
+            ;;
+            *) loop5
+                ;;
+        esac
+    }
+
+    loop5
+
+    #Fin tutorial / entrega día 8, editar esto una vez entregado para seguir con el juego.
+    clear
+    echo "Hasta acá llega el tutorial."
+    echo "Los siguientes niveles los iremos agregando para la entrega final."
+    echo "Gracias por jugar."
+    printf "\n"
+    printf "\n"
+    printf "\n"
+    echo "Hecho por: S. Alvez, F. Del Castillo y L. Vera."
+    printf "\n"
+    printf "\n"
+    read -r "Presiona cualquier tecla para salir."
+    exit
