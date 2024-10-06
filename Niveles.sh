@@ -73,7 +73,7 @@ tutorial(){
     printf "Entra en la carpeta 'Reg' y elimina su contenido."
     nlInfo
     nlInfo
-    printf "-------------------------------------------------"
+    printf "──────────────────────────────────────────────────"
     nlInfo
     printf "Escribe 'ayuda' si la necesitas."
 
@@ -84,7 +84,7 @@ tutorial(){
         clearInp
 
         case $cmd3 in
-            "cd reg")
+            "cd Reg")
                 ;;
             ayuda) setFCInf 9 1
                 printf "Para entrar en 'Reg', escribe 'cd Reg'."
@@ -104,7 +104,7 @@ tutorial(){
     asciiCarpeta 2 5
     setFCMain 1 7
     printf "SP_1"
-    setFCInp 1 1
+    setFCInf 1 1
     printf "Elimina la carpeta llamada 'SP_1'."
     nlInfo
     printf "Recuerda utilizar 'rm' para eliminar."
@@ -116,7 +116,7 @@ tutorial(){
             clearInp
 
             case $cmd4 in
-                "rm Reg")
+                "rm SP_1")
                     ;;
                 *) loop4
                     ;;
@@ -166,5 +166,6 @@ tutorial(){
     echo "Hecho por: S. Alvez, F. Del Castillo y L. Vera."
     printf "\n"
     printf "\n"
-    read -r "Presiona cualquier tecla para salir."
+    read -p "Presiona cualquier tecla para salir." salir
     exit
+}

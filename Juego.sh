@@ -24,7 +24,7 @@ printf "Bienvenido a NOMBRE JUEGO"
 setFCInf 2 1
 printf "1- Jugar"
 setFCInf 3 1
-printf "2- Info"
+#printf "2- Info"
 setFCInf 4 1
 printf "3- Salir"
 nlInfo
