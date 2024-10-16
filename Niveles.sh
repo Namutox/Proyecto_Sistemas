@@ -4,6 +4,7 @@
 tutorial(){
     clearInf
     clearInp
+    clearMain
     setFCInf 1 1
 
     printf "..."
@@ -94,8 +95,6 @@ tutorial(){
                 ;;
         esac
     }
-
-
     loop3
 
     clearMain
@@ -138,10 +137,10 @@ tutorial(){
     loop5 (){
         setFCInp 1 1
 
-        read cmd3
+        read cmd5
         clearInp
 
-        case $cmd3 in
+        case $cmd5 in
             "disconnect")
                 ;;
             ayuda) setFCInf 5 1
@@ -154,18 +153,106 @@ tutorial(){
     }
 
     loop5
+}
 
-    #Fin tutorial / entrega día 8, editar esto una vez entregado para seguir con el juego.
-    clear
-    echo "Hasta acá llega el tutorial."
-    echo "Los siguientes niveles los iremos agregando para la entrega final."
-    echo "Gracias por jugar."
-    printf "\n"
-    printf "\n"
-    printf "\n"
-    echo "Hecho por: S. Alvez, F. Del Castillo y L. Vera."
-    printf "\n"
-    printf "\n"
-    read -p "Presiona cualquier tecla para salir." salir
-    exit
+nivel1(){
+    clearInf
+    clearMain
+    clearInp
+
+    setFCInf 1 1
+    printf "..."
+    nlInfo
+    sleep 0.5
+    printf "....."
+    nlInfo
+    printf "Parece que tus datos siguen en el registro."
+    nlInfo
+    printf "Utiliza el comando 'ping' para ver las conexiones."
+
+    loop1-1(){
+        setFCInp 1 1
+        
+        read cmd1
+        clearInp
+    
+        case $cmd1 in
+            ping) clearInf
+                setFCInf 1 1
+                printf "Busca la base de datos."
+                nlInfo
+                printf "Recuerda que puedes escribir 'ayuda'."
+
+                asciiCompu 1 5 1
+                asciiCompu 1 25 2
+                asciiCompu 10 5 3
+                asciiCompu 10 25 4
+                ;;
+            ayuda) setFCInf 5 1
+                printf "Entra en las diferentes computadoras utilizando:"
+                nlInfo
+                printf "connect pc_'numero de la pc'."
+                nlInfo
+                printf "Por ejemplo: 'connect pc_1'."
+                loop1-1
+                ;;
+            *) loop1-1
+                ;;
+        esac
+    }
+    loop1-1
+    
+    loop1-2(){
+        setFCInp 1 1
+
+        read cmd2
+        clearInp
+        clearInf
+
+        case $cmd2 in
+            "connect pc_1")
+                clearMain
+
+                asciiCarpeta 2 5
+                setFCMain 1 7
+                printf "Logs"
+                asciiCarpeta 2 25
+                setFCMain 1 27
+                printf "Reg"
+                ;;
+            "connect pc_2")
+                clearMain
+                
+                asciiCarpeta 2 5
+                setFCMain 1 7
+                printf "Img"
+                asciiCarpeta 2 25
+                setFCMain 1 27
+                printf "Old"
+                ;;
+            "connect pc_3")
+                clearMain
+                
+                asciiCarpeta 2 5
+                setFCMain 1 7
+                printf "Base_Datos"
+                asciiCarpeta 2 25
+                setFCMain 1 27
+                printf "Etc"
+                ;;
+            "connect pc_4")
+                clearMain
+                
+                asciiCarpeta 2 5
+                setFCMain 1 7
+                printf "System"
+                asciiCarpeta 2 25
+                setFCMain 1 27
+                printf "Usr"
+                ;;
+            *) loop1-2
+                ;;
+        esac
+    }
+    loop1-2
 }

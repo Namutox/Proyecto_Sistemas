@@ -15,7 +15,7 @@ PS3=": "
 
 
 #Acá inician los comandos que se muestran en la pantalla.
-inicio
+#inicio
 hud
 logo
 
@@ -36,7 +36,8 @@ clearInp
 
 case $comando in
     1) setFCMain 1 1
-        tutorial
+        #tutorial
+        nivel1
         ;;
     2) setFCMain 1 1
         printf "Juego hecho por: "
