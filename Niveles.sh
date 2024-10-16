@@ -219,6 +219,28 @@ nivel1(){
                 asciiCarpeta 2 25
                 setFCMain 1 27
                 printf "Reg"
+
+                loop1-3-pc1(){
+                    setFCInp 1 1
+
+                    read cmd3
+                    clearInp
+
+                    case $cmd3 in
+                        "cd Logs")
+                            clearMain
+                            ;;
+                        "cd Reg")
+                            clearMain
+                            ;;
+                        "cd ..")
+                            loop1-1
+                            ;;
+                        *)
+                            loop1-3-pc1
+                    esac
+                }
+                loop1-3-pc1
                 ;;
             "connect pc_2")
                 clearMain
@@ -229,6 +251,28 @@ nivel1(){
                 asciiCarpeta 2 25
                 setFCMain 1 27
                 printf "Old"
+
+                loop1-3-pc2(){
+                    setFCInp 1 1
+
+                    read cmd3
+                    clearInp
+
+                    case $cmd3 in
+                        "cd Img")
+                            clearMain
+                            ;;
+                        "cd Old")
+                            clearMain
+                            ;;
+                        "cd ..")
+                            loop1-1
+                            ;;
+                        *)
+                            loop1-3-pc2
+                    esac
+                }
+                loop1-3-pc2
                 ;;
             "connect pc_3")
                 clearMain
@@ -239,6 +283,28 @@ nivel1(){
                 asciiCarpeta 2 25
                 setFCMain 1 27
                 printf "Etc"
+
+                loop1-3-pc3(){
+                    setFCInp 1 1
+
+                    read cmd3
+                    clearInp
+
+                    case $cmd3 in
+                        "cd Base_Datos")
+                            clearMain
+                            ;;
+                        "cd Etc")
+                            clearMain
+                            ;;
+                        "cd ..")
+                            loop1-1
+                            ;;
+                        *)
+                            loop1-3-pc3
+                    esac
+                }
+                loop1-3-pc3
                 ;;
             "connect pc_4")
                 clearMain
@@ -249,6 +315,28 @@ nivel1(){
                 asciiCarpeta 2 25
                 setFCMain 1 27
                 printf "Usr"
+
+                loop1-3-pc4(){
+                    setFCInp 1 1
+
+                    read cmd3
+                    clearInp
+
+                    case $cmd3 in
+                        "cd System")
+                            clearMain
+                            ;;
+                        "cd Usr")
+                            clearMain
+                            ;;
+                        "cd ..")
+                            loop1-1
+                            ;;
+                        *)
+                            loop1-3-pc4
+                    esac
+                }
+                loop1-3-pc4
                 ;;
             *) loop1-2
                 ;;
