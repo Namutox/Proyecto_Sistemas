@@ -18,6 +18,9 @@ connectPC1(){
     clearMain
     clearInf
 
+    setFCInf 1 1
+    printf "Recuerda usar 'cd' para acceder a carpetas."
+
     asciiCarpeta 2 5
     setFCMain 1 7
     printf "Logs"
@@ -29,6 +32,9 @@ connectPC1(){
 connectPC2(){
     clearMain
     clearInf
+    
+    setFCInf 1 1
+    printf "Recuerda usar 'cd' para acceder a carpetas."
 
     asciiCarpeta 2 5
     setFCMain 1 7
@@ -41,6 +47,9 @@ connectPC2(){
 connectPC3(){
     clearMain
     clearInf
+    
+    setFCInf 1 1
+    printf "Recuerda usar 'cd' para acceder a carpetas."
 
     asciiCarpeta 2 5
     setFCMain 1 7
@@ -53,6 +62,9 @@ connectPC3(){
 connectPC4(){
     clearMain
     clearInf
+    
+    setFCInf 1 1
+    printf "Recuerda usar 'cd' para acceder a carpetas."
 
     asciiCarpeta 2 5
     setFCMain 1 7
@@ -62,46 +74,125 @@ connectPC4(){
     printf "Usr"
 }
 
+DirIrr(){
+    clearMain
+    setFCMain 2 2
+    printf "Solo ves archivos irrelevantes, desconectate y busca la base de datos."
+    loop1-Dir(){
+        setFCInp 1 1
+        read cmdDir
+        clearInp
+
+        case $cmdDir in
+            disconnect)
+                clearMain
+                disconnect
+                ;;
+            *)
+                loop1-Dir
+                ;;
+        esac
+    }
+    loop1-Dir
+}
+
 logs(){
-    clear
+    DirIrr
 }
 
 reg(){
-    clear
+    DirIrr
 }
 
 img(){
-    clear
+    DirIrr
 }
 
 old(){
-    clear
+    DirIrr
 }
 
 baseDatos(){
-    clear
+    clearMain
+    clearInf
+    setFCInf 1 1
+    printf "Lo encontraste, aquí estan los archivos."
+    nlInfo
+    printf "Denes eliminar 'Buscados' para ser libre."
+    setFCInf 5 1
+    printf "Recuerda que puedes usar el comando 'ayuda'."
+    
+    asciiFloppy 2 5
+    setFCMain 1 5
+    printf "Sospechosos"
+    asciiFloppy 2 25
+    setFCMain 1 26
+    printf "Buscados"
+
+    loop1-Finn(){
+        setFCInp 1 1
+        read cmdFinn
+        clearInp
+
+        case $cmdFinn in
+            "rm Buscados")
+                clearMain
+                clearInf
+                asciiFloppy 2 5
+                setFCMain 1 5
+                printf "Sospechosos"
+                
+                setFCInf 1 1
+                printf "Muy bien, lo lograste."
+                nlInfo
+                printf "Ahora simplemente desconectate y habremos terminado."
+
+                loop1-Fin(){
+                    setFCInp 1 1
+                    read cmdFin
+                    clearInp
+
+                    case $cmdFin in
+                        disconnect)
+                            clearInf
+                            clearMain
+                            ;;
+                        *)
+                            loop1-Fin
+                            ;;
+                    esac
+                }
+                loop1-Fin
+                ;;
+            ayuda)
+                setFCInf 9 1
+                printf "Para eliminar, escribe 'rm' y el nombre."
+                loop1-Finn
+                ;;
+            *)
+                loop1-Finn
+                ;;
+        esac
+    }
+    loop1-Finn
 }
 
 etc(){
-    clear
+    DirIrr
 }
 
 system(){
-    clear
+    DirIrr
 }
 
 usr(){
-    clear
+    DirIrr
 }
 
 disconnect(){
     clearMain
     ping
     loop1-2
-}
-
-cd(){
-    clear
 }
 
 ayuda1(){
