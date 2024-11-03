@@ -1,0 +1,3 @@
+1- Abrir terminal en esta ubicación
+2- Poner terminal en pantalla completa
+3- Escribir './Juego.sh'
