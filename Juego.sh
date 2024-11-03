@@ -17,6 +17,7 @@ PS3=": "
 
 
 #Acá inician los comandos que se muestran en la pantalla.
+clear
 #inicio
 hud
 logo
@@ -26,35 +27,39 @@ printf "Bienvenido a NOMBRE JUEGO"
 setFCInf 2 1
 printf "1- Jugar"
 setFCInf 3 1
-#printf "2- Info"
+printf "2- Info"
 setFCInf 4 1
 printf "3- Salir"
 nlInfo
 printf "\033[0m"
 
-setFCInp 1 1
-read comando
-clearInp
 
-case $comando in
-    1) setFCMain 1 1
-        #tutorial
-        nivel1
-        ;;
-    2) setFCMain 1 1
-        printf "Juego hecho por: "
-        ;;
-    3) clear
-        exit
-        ;;
-    *) #clear
-        setFCMain 1 1
-        printf "Opcion incorrecta"
-        nlMain
-        printf "TEST"
-        exit
-        ;;
+
+loop-juego(){
+    setFCInp 1 1
+    read comando
+    clearInp
+
+    case $comando in
+        1) setFCMain 1 1
+            tutorial
+            nivel1
+            nivel3
+            ;;
+        2) setFCMain 1 1
+            printf "Juego hecho por: "
+            printf "Santiago Alvez, Florencia del Castillo, Luna Vera."
+            loop-juego
+            ;;
+        3) clear
+            exit
+            ;;
+        *)
+            loop-juego
+            ;;
 esac
+}
+loop-juego
 
 
 #Comandos para volver a la normalidad los formatos usados (Colores, ocultar el cursor, etc).
