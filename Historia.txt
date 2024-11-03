@@ -1,1 +1,6 @@
-el objetivo del juego es ayudar al usuario a borrar registros de el, esos registros son comprometedores, de delitos que ha hecho el ususario, quiere borrar estos archivos para no tener consecuencias con la ley. El programa lo ira guiando para que no queden registros de el legalmente malos. El no sabe como hackear por eso tendra un tutorial, asi puede realizar con exito su escape. tambien tenemos que asegurarnos de no dejar ninguna pista en el programa de que el lo haya utilizado. Al finalizar este escape de la ley con exito, se borrara todo registro de este, ahora, si el usuario se demora mucho entre comandos lo podrian descubrir y terminar el juego en ese momento (game over)
+el objetivo del juego es ayudar al usuario a borrar registros de el, esos registros son comprometedores, de delitos que ha hecho el ususario,
+quiere borrar estos archivos para no tener consecuencias con la ley. 
+El programa lo ira guiando para que no queden registros de el legalmente malos. 
+El no sabe como hackear por eso tendra un tutorial, asi puede realizar con exito su escape. 
+tambien tenemos que asegurarnos de no dejar ninguna pista en el programa de que el lo haya utilizado. 
+Al finalizar este escape de la ley con exito, se borrara todo registro de este, ahora, si el usuario se demora mucho entre comandos lo podrian descubrir y terminar el juego en ese momento (game over)
