@@ -4,12 +4,13 @@
 #"Importa" los archivos con funciones practicas (Para no llenar este archivo con funciones y hacerlo mas facil de leer).
 source ./Herramientas.sh
 source ./Funciones.sh
-source ./Niveles.sh
+source ./Tutorial.sh
 source ./Ascii.sh
 source ./Nivel1.sh
+source ./Nivel2.sh
 source ./Nivel3.sh
 
-#Estas dos lineas de código ocultan el cursor en la consola y borran el nombre por defecto al escribir.
+#Estas lineas de código ocultan el cursor en la consola y borran el nombre por defecto al escribir.
 printf "\033[?25l"
 PS0=
 PS1=
@@ -17,8 +18,7 @@ PS3=": "
 
 
 #Acá inician los comandos que se muestran en la pantalla.
-clear
-#inicio
+inicio
 hud
 logo
 
@@ -44,6 +44,7 @@ loop-juego(){
         1) setFCMain 1 1
             tutorial
             nivel1
+            nivel2
             nivel3
             ;;
         2) setFCMain 1 1
@@ -52,6 +53,8 @@ loop-juego(){
             loop-juego
             ;;
         3) clear
+            printf "\033[0m"
+            printf "\033[?25h"
             exit
             ;;
         *)

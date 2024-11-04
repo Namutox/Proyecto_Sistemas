@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Funciones case
-ping(){
+ping1(){
     clearInf
     setFCInf 1 1
     printf "Busca la base de datos."
@@ -191,7 +191,7 @@ usr(){
 
 disconnect(){
     clearMain
-    ping
+    ping1
     loop1-2
 }
 
@@ -230,7 +230,7 @@ nivel1(){
         clearInp
     
         case $cmd1 in
-            ping) ping
+            ping) ping1
                 ;;
             *) loop1-1
                 ;;

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Funciones case
-ping(){
+ping3(){
     clearInf
     asciiCompu 10 25 0
 }
@@ -9,9 +9,6 @@ ping(){
 connectPC0(){
     clearMain
     clearInf
-
-    setFCInf 1 1
-    printf "Recuerda usar 'cd' para acceder a carpetas."
 
     asciiCarpeta 2 5
     setFCMain 1 7
@@ -27,10 +24,10 @@ connectPC0(){
     printf "Etc"
     asciiCarpeta 13 25
     setFCMain 12 27
-    printf "Logs"
+    printf "Old"
 }
 
-#-------------------------------------------------------------------------------------   
+#-------------------------------------------------------------------------------------
 
 #Nivel
 nivel3(){
@@ -55,7 +52,7 @@ nivel3(){
         clearInp
     
         case $cmd1 in
-            ping) ping
+            ping) ping3
                 ;;
             *) loop3-1
                 ;;
@@ -162,6 +159,7 @@ nivel3(){
             ayuda)
                 setFCInf 5 1
                 printf "Utiliza 'rm' y '.' para seleccionar todo."
+                loop3-5
                 ;;
             *)
                 loop3-5
