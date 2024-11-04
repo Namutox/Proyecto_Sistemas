@@ -1,0 +1,6 @@
+#!/bin/bash
+
+fin(){
+    clear
+    
+}
